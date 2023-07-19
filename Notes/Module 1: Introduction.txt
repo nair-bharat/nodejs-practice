@@ -1,0 +1,53 @@
+Node.js -> JS Runtime
+
+JS uded in browser -> manipulates the DOM [interact with the page] - whatever we see
+
+Node.js -> built on JS -> takes JS and puts it in diff env. -> server [just like normal programs in our computer or any other computer]
+
+Node.js -> we can use to run outside the browser
+
+Normal programs in our computer or other computer anywhere.
+
+Node.js -> uses V8 (JS engine Google Chrome) <- compiles JS
+v8 -> compiles to Machine Code (JS code to Machine Code)
+
+Node.js adds more features like accessing file system (reading or writing files or so on.) (which is not possible in browser)
+
+In a nutshell, allows JS on your computer and it adds useful functionalities to JS engine.
+
+
+-----------------------------
+
+Installing Node.js and creating app
+
+In a nutshell, Node.js is JS on server.
+
+User -> Client (browser) (written in HTML, CSS and JS) -> reqeust some resourese to some server (typing on a url) and the response is received in HTML, CSS or JS files.
+
+Server handles business logic, Input Validation, DB Auth, etc. User can't see all these things which is happening behind the scenes.
+
+
+We need Node.js here to write code on server.
+
+So to summarize, Node.js is a JS Runtime
+
+which you can use it for more than just server side code, it can be used to  create utlity scripts, build tools.
+
+
+Roles -> Node.js (used for Web Development)
+
+1. Run Server
+
+create server and listen to incoming requests.
+
+2. Business logic:
+
+handle requests, validate input, connect to DB
+
+3. Responses.
+
+return responses. (rendered html, json)
+
+We can use Node in REPL mode or using Files.
+
+

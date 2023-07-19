@@ -1,0 +1,49 @@
+how web works:
+
+reference - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers
+
+
+
+------------------------
+
+Node.js - behind the scenes.
+
+we know that when we write any piece of code, JS behaves as single threaded language, so let us say that there are multiple incoming requests, like for 
+eg. we saw that there was one server request but let us say that there are multiple such requests, then how Node.js takes care of performance and security ?
+
+how it handles multiple incoming requests ?
+
+
+as JS being a single threaded language, it starts an event loop, which handles event callbacks (fast finishing operations)
+
+fs - file system operations are long time taking operations, so those are sent to worker pool, which does most of the heavy lifting, (worker pool runs on different thread)
+
+once worker pool completes it operation, then it triggers a callback which is then sent to the event loop.
+
+this worker pool by the way is totally detached from our code.
+
+
+
+----- Event Loop:
+
+It handles callback, we can say that it is started by Node.js.
+
+for every iterations, these are checked by the event loop:
+
+1. timers: execute setTimeout, setInterval callbacks,
+
+2. pending callbacks: execute I/O related callbacks, that were deferred.
+
+I/O is Input Output (Disk and Network operation)(Known as Blocking Operations)
+
+3. Poll: retrieve new I/O events, execute their callbacks, or defer execution, (register as pending callback), it can also jump to timer execution
+
+4. Check: execute setImmediate() callbacks, which are just like setTimeout, basically we can say that it is bit faster than setTimeout.
+
+5. Close callbacks execute all close event callbacks.
+
+after that if we might wantto exit the node.js program we can use process.exit, otherwise if there are no remaining event (if refs == 0), ideally there is
+atleast one instance running like createServer or listening to server.
+
+
+--------------- revise more about Event Loops.
