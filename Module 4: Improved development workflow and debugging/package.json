@@ -1,0 +1,13 @@
+{
+  "name": "module4",
+  "version": "1.0.0",
+  "description": "Understanding the debugging and workflow",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
+  },
+  "author": "Bharat Nair",
+  "license": "ISC"
+}
